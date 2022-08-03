@@ -59,26 +59,26 @@ const app = Vue.createApp({
     },
     attackMonster() {
       this.currentRound++;
-      const attackValue = getRandomValue(5, 12);
+      const attackValue = getRandomValue(6, 10);
       this.monsterHealth -= attackValue;
       this.addLogMessage('player', 'attack', attackValue);
       this.attackPlayer();
     },
     attackPlayer() {
-      const attackValue = getRandomValue(8, 15);
+      const attackValue = getRandomValue(7, 13);
       this.playerHealth -= attackValue;
       this.addLogMessage('monster', 'attack', attackValue);
     },
     specialAttackMonster() {
       this.currentRound++;
-      const attackValue = getRandomValue(10, 25);
+      const attackValue = getRandomValue(13, 26);
       this.monsterHealth -= attackValue;
       this.addLogMessage('player', 'attack', attackValue);
       this.attackPlayer();
     },
     healPlayer() {
       this.currentRound++;
-      const healValue = getRandomValue(8, 20);
+      const healValue = getRandomValue(10, 20);
       if (this.playerHealth + healValue > 100) {
         this.playerHealth = 100;
       } else {
